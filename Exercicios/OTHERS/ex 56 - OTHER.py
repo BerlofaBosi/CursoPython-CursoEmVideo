@@ -12,7 +12,7 @@ nameslist = []
 def average():                  #Função que retorna a média de idades
     idade = 0
 
-    for avg in range(0,4):
+    for avg in range(0, len(nameslist)):
         idade += namesdict[nameslist[avg]]['Idade']
 
     return idade / 4
@@ -21,12 +21,13 @@ def olderMan( _in = 0 ):        #Função que retorna por padrão a idade.
     older_name = ''
     older = 0
     
-    for c in range(0, 4):
+    for c in range(0, len(nameslist)):
         age = namesdict[nameslist[c]]['Idade']
-        if c == 1:
+        gender = namesdict[nameslist[c]]['Sexo']
+        if c == 1 and gender != 'F':
             older_name = nameslist[c]
             older = age
-        if age > older:
+        if age > older and gender != 'F':
             older_name = nameslist[c]
             older = age
 
@@ -38,7 +39,7 @@ def olderMan( _in = 0 ):        #Função que retorna por padrão a idade.
 def womansUnder20():            #Função que retorna a contagem de mulheres abaixo dos 20 anos
     count = 0
 
-    for c in range(0, 4):
+    for c in range(0, len(nameslist)):
         age = namesdict[nameslist[c]]['Idade']
         gender = namesdict[nameslist[c]]['Sexo']
 
