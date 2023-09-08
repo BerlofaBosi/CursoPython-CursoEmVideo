@@ -17,13 +17,22 @@ int main() {
 }
 */
 
+void hello();
+
 int main() {
 
     for (int c = 0; c <= 1000; c++) {
 
         cout << "TESTE" << " " << c << endl;
+        hello();
 
     }
 
     return 0;
+}
+
+void hello() {
+
+    cout << "Hello World!" << endl;
+
 }
