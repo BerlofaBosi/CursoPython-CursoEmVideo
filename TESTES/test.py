@@ -1,12 +1,7 @@
+import biblioteca as teste
 
-c = 0
+print(teste.pi)
+print(teste.area(5, 6))
+print(teste.area_circulo(4))
+print(teste.area_triangulo(3, 4))
 
-while c != 1000000:
-    c += 1
-    print(c)
-
-
-for i in range(0, 1000000):
-    i += 1
-    print(i)
-    

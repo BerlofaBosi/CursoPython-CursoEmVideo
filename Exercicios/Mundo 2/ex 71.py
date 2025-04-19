@@ -14,4 +14,3 @@ while sacar != 0:
     if (sacar - 50) > 0:
         cedula50 += 1
 
-    
