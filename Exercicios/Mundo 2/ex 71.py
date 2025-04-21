@@ -2,15 +2,36 @@
 #No início, pergunte ao usuário qual será o valor a ser sacado (número inteiro) e o programa vai informar quantas cédulas de cada valor serão entregues. 
 #OBS: considere que o caixa possui cédulas de R$50, R$20, R$10 e R$1.
 
-print('===================')
-print('    BANCO BERLO    ')
-print('===================')
+print('='*50)
+print(f'\n{"BANCO BERLO":^50}\n')
+print('='*50)
 
-sacar = float(input('Que valor você quer sacar? R$'))
+valorSacar = int(input('\nQue valor você quer sacar? R$'))
 
-cedula50 = cedula20 = cedula10 = cedula01= 0
+print(f'\n\n{"SACANDO...":^50}\n')
 
-while sacar != 0:
-    if (sacar - 50) > 0:
-        cedula50 += 1
+valorCedula = 50
+quantidadeCedula = 0
 
+while True:
+    if valorSacar >= valorCedula:
+        valorSacar -= valorCedula
+        quantidadeCedula += 1
+    else:
+        if quantidadeCedula > 0:
+            print(f'{quantidadeCedula} cédulas de R${valorCedula}')
+
+        match valorCedula:
+            case 50:
+                valorCedula = 20
+            case 20:
+                valorCedula = 10
+            case 10:
+                valorCedula = 1
+            
+        if valorSacar == 0:
+            print('\nObrigado por utilizar o Banco Berlo!')
+            print('='*50)
+            break
+        
+        quantidadeCedula = 0
